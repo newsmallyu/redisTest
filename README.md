@@ -190,3 +190,53 @@ Response
     ]
 }
 ```
+
+13.写入自定义MAP类型数据
+
+```
+POST
+    http://ip:port/main/startHset?key=$data
+
+Response
+{
+    "code": 200
+}
+```
+14.获取自定义MAP类型数据
+
+```
+GET
+    http://ip:port/main/startHgetWithK?key=$data
+
+Response
+{
+    "code": 200,
+    "data": [
+        {
+            "key": "xaecbd:testUserMap"
+        },
+        {
+            "test1": "value1"
+        },
+        {
+            "test2": "value2"
+        }
+    ]
+}
+```
+
+15删除自定义MAP类型数据
+
+```
+POST
+    http://ip:port/main/startHdel?key=$data
+body
+    ["test1","test2"]
+Response
+{
+    "code": 200,
+    "message": "Del  2"
+}
+```
+
+

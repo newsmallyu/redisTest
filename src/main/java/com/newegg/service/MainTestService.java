@@ -23,6 +23,10 @@ public class MainTestService {
         boolean b = delete(key);
         return b;
     }
+    public int delAll(){
+        int i = removeAll();
+        return i;
+    }
     public void testhset(String key, Map map){
         hset(key, map);
     }

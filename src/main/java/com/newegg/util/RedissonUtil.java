@@ -9,6 +9,7 @@ import org.springframework.core.io.ClassPathResource;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
@@ -18,7 +19,7 @@ public class RedissonUtil {
     private static int static_retries = 3;
     static {
         try {
-            File file2 = new ClassPathResource("redis.yaml").getFile();
+            InputStream file2 = new ClassPathResource("redis.yaml").getInputStream();
             Config config = Config.fromYAML(file2);
             redissonClient = Redisson.create(config);
         } catch (IOException e) {

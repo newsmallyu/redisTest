@@ -50,6 +50,12 @@ public class MainTest {
         return SUCCESS("Del  " + l);
     }
 
+    @GetMapping("/removeAllKeys")
+    public RestResponse removeAllKeys(){
+        int i = mainTestService.delAll();
+        return SUCCESS("Del  " + i);
+    }
+
     @GetMapping("/startSet")
     @ResponseBody
     public RestResponse startBatchSetTest(){
@@ -144,7 +150,7 @@ public class MainTest {
     public RestResponse getTTL(@RequestParam String key){
         long l;
         try {
-            l= mainTestService.testgetTTl(key);
+            l = mainTestService.testgetTTl(key);
         }catch (Exception e){
             return ERROR(e.getMessage());
         }

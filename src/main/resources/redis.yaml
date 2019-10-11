@@ -20,9 +20,9 @@ clusterServersConfig:
   readMode: "SLAVE"
   subscriptionMode: "SLAVE"
   nodeAddresses:
-    - "redis://172.16.140.15:8305"
-    - "redis://172.16.140.18:8304"
-    - "redis://172.16.140.12:8308"
+    - "redis://sxlab25:8305"
+    - "redis://sxlab25:8304"
+    - "redis://sxlab25:8308"
   scanInterval: 1000
   pingConnectionInterval: 0
   keepAlive: false
